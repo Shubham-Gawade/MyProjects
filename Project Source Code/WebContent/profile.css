@@ -1,0 +1,106 @@
+@CHARSET "ISO-8859-1";
+body{
+	margin:0px;
+	padding:0px;
+	background-image:url("img10.jsp");
+	font-family:arial;
+	box-sizing:border-box;
+	
+}
+.header{
+	padding: 14px;
+	text-align:center;
+	background:#6c6cf2;
+	color:#ffffff;
+	font-size: 14px;
+	font-weight:bold;
+
+}
+.topright{
+	position:absolute;
+	top:8px;
+	right:16px;
+	font-size:18px;
+	color:white;
+	
+	
+}
+
+.card-container{
+	width:1100px;
+	height:800px;
+	background:#fff;
+	border-radius: 6px;
+	position: absolute;
+	top:18%;
+	left:20%;
+	transfrom:translate(-50%,-50%);
+	box-shadow:0px 1px 10px 1px #000;
+	overflow:hidden;
+	display:inline-block;
+	
+}
+.upper-container{
+	height:150px;
+	background: #7f00ff;
+	
+}
+.lower-container{
+	height:280px;
+	background: #fff;
+	padding:20px;
+	padding-top:40px;
+	
+	
+	
+}
+.image-container{
+	width:80px;
+	height:80px;
+	background: white;
+	border-radius:50%;
+	padding:5px;
+	transfrom:translate(100px,100px);
+
+	
+}
+.image-container img{
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	
+	
+}
+.lower-container .btn{
+	padding:12px 20px;
+	background:#7f00ff;
+	border:none;
+	width:180px;
+	color:white;
+	border-radius:30px;
+	font-size:10px;
+	text-decoration:none;
+	font-weight:bold;
+	transition: all .3s ease-in;
+	
+	
+}
+.lower-container .btn:hover{
+	background:transparent;
+	color:#7f00ff;
+	border:2px solid #7b89ec;
+}
+
+.TEXT{
+	text-align:right;
+}
+.topright{
+	position:absolute;
+	top:8px;
+	right:16px;
+	font-size:18px;
+	color:white;
+	
+	
+}
+<div class="topright">

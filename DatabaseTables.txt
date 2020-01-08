@@ -1,0 +1,152 @@
+## You should create tables in this order only :
+
+create table UserTempTable
+(
+	FirstName varchar2(15),  
+	LastName varchar2(15), 
+	Gender varchar2(7), 
+	DOB varchar2(10),
+	Area varchar2(40),
+	City varchar2(20),
+	State varchar2(20),
+	Pincode number(10),
+	Nationality varchar2(15),
+	AdharNo number(12) UNIQUE,
+	mob_no number(10),
+	Email_id varchar2(30) UNIQUE,
+	User_id varchar2(15),
+	AccType varchar2(15),
+	BranchName varchar2(20),
+	primary key (User_id)
+);
+
+create table BranchInfo
+(
+	Branch_name varchar2(20) not null,
+	IFSC_Code varchar2(12)not null,
+	primary key(Branch_name)
+);
+
+create table Account
+(
+	Customer_id number(6) primary key,
+	Account_Type varchar2(15) not null,
+	Acc_Bal number(12) not null,
+	Branch_name varchar2(20) references BranchInfo(Branch_name) ON DELETE CASCADE
+);
+
+create table User_Id
+(
+	User_id varchar2(15) primary key,
+	Customer_id number(6) references Account(Customer_id) ON DELETE CASCADE
+);
+
+create table AddressTable
+(
+	Customer_id number(6),
+	Area varchar2(15) not null,
+	City varchar2(15) not null,
+	State varchar2(15) not null,
+	Pincode number(8) not null,
+	foreign key(Customer_id) references Account(Customer_id) ON DELETE CASCADE
+);
+
+create table AdharNoTable
+(
+	Customer_id number(6) not null,
+	Adhar_no number(12) not null,
+	primary key(Adhar_no,Customer_id),
+	foreign key(Customer_id) references Account(Customer_id) ON DELETE CASCADE
+);
+
+create table AdharPrime
+(
+	Adhar_no number(12) primary key
+);
+
+
+create table UserInfo
+(
+	Adhar_no number(12), 
+	First_name varchar2(10) not null,
+	Last_name varchar2(10) not null,
+	DOB varchar2(11) not null,
+	Gender varchar2(7) not null,
+	Nationality varchar2(15) not null,
+	foreign key(Adhar_no) references AdharPrime(Adhar_no) ON DELETE CASCADE
+);
+
+create table VarientUserInfo
+(
+	Adhar_no number(12),
+	Email_Id varchar2(30) not null,
+	Mob_no number(10) not null,
+	primary key(Adhar_no,Email_Id,Mob_no),
+	foreign key(Adhar_no) references AdharPrime(Adhar_no) ON DELETE CASCADE
+);
+
+create table LoginInfo1
+(
+	Customer_id number(6),
+	Password varchar2(15) not null,
+	Acc_no number(20) not null,
+	Email_Id varchar2(30) not null,
+	AccountCreateDate varchar2(15) not null,
+	foreign key(Customer_id) references Account(Customer_id) ON DELETE CASCADE,
+               primary key(Customer_id,Acc_no)
+);
+
+
+create table Transaction_PIN
+(
+	Customer_id number(6),
+	PIN varchar2(10) not null,
+	foreign key(Customer_id) references Account(Customer_id) ON DELETE CASCADE
+);
+
+create table TransactionAmountTable
+(
+	Transaction_id number(6),
+	Customer_id number(6),
+	Amount number(20) not null,
+	DateOfTrasaction varchar2(12) not null,
+	Status varchar2(12) not null,
+	Discription varchar(50) not null,
+	foreign key(Customer_id) references Account(Customer_id) ON DELETE CASCADE
+);
+
+
+##You Should drop/display/delete your tables in this order only:
+
+drop table BranchInfo;
+drop table LoginInfo1;
+drop table VarientUserInfo;
+drop table UserInfo;
+drop table AddressTable;
+drop table AdharNoTable;
+drop table Account;
+drop table AdharPrime;
+drop table Transaction_PIN;
+drop table TransactionAmountTable;
+
+select * from Account;
+select * from AddressTable;
+select * from AdharNoTable;
+select *from UserInfo;
+select * from VarientUserInfo;
+select * from LoginInfo1;
+select * from User_Id;
+select * from AdharPrime;
+select * from Transaction_PIN;
+select * from TransactionAmountTable;
+select * from UserTempTable;
+
+delete from LoginInfo1;
+delete from VarientUserInfo;
+delete from UserInfo;
+delete from AddressTable;
+delete from AdharNoTable;
+delete from Account;
+delete from AdharPrime;
+delete from Transaction_PIN;
+delete from TransactionAmountTable;

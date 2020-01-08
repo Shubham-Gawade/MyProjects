@@ -1,0 +1,182 @@
+@CHARSET "ISO-8859-1";
+
+.footer{
+	   color:#fffff;
+	    position:fixed;
+	    left:0;
+	    bottom:0;
+	    width:100%;
+		background-color:#a7c6fa0ll;
+		text-align:center;
+}
+.topright{
+	position:absolute;
+	top:8px;
+	right:16px;
+	font-size:18px;
+	color:white;
+	
+	
+}
+
+.navbar{
+	overflow:hidden;
+	float:left;
+	
+}
+body{
+	background-image:url();
+	
+}
+.main-text{
+	width:64%;
+	height:400px;
+	position:absolute;
+	left:60%;
+	top:45%;
+	transform:translate(-50%,-50%);
+	background-image: url("hd1.jpg");
+	"WebContent/logo1.jpg"background-size:100% 100%;
+	box-shadow:1px 2px 12px 5px #636363;
+	animation: 25s slider infinite linear;
+	
+}
+@keyframes slider{
+	
+	50%{background-image:url("add2.jpg");}
+    50%{background-image:url("Oriadd3.jpg");}
+   	
+   
+    
+    
+	
+}
+.h12{
+	
+	font-size:2.1rem;
+	font-color:#ffffff;
+	line-height:1.7;
+	text-align:center;
+	color:#ffffff;
+	margin-top:12px;
+}
+*{
+	margin:0;
+	padding:0;
+	
+}
+html,body{
+	height: 100%;
+	overflow: hidden;
+	
+}
+#wapper{
+	position:absolute;
+	overflow: auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	border:2px solid white;
+}
+
+.heading{
+	padding: 0px;
+	text-align:center;
+	background:#6c6cf2;
+	color:#ffffff;
+	font-size: 14px;
+	font-weight:bold;
+	
+	
+}
+div.slide-left{
+	width:100%;
+	overflow:hidden;
+	
+}
+div.slide-left p{
+	animation:slide-left 7s;
+	
+}
+@keyframes slide-left{
+	from{
+		margin-left:100%;
+		width:300%;
+	
+}
+   to{
+      margin-left:0%;
+      width:100%;
+   }
+}
+		
+	
+}
+marquee{
+	font-size:100px;
+	font-weight:2500;
+	color:#000000;
+	font-family:sans-serif;
+}	
+.fixed{
+	position: absolute;
+	top:35px;
+	left:0px;
+	width:100%;
+	
+}
+.sidebar{
+	position: fixed;
+	width:200px;
+	height:80%;
+	background:#949494;
+	padding:60px 10;
+	top:14%
+	
+}
+.bannner-img{
+	background-image:url("n1.jpg");
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-reprat:no-reperat;
+	background-position: center center;
+	hight:100%;
+	width:100%;
+	
+}
+.wrapper{
+	display:flex;
+	position:relative;
+}
+.wrapper.silder{
+	position: fixed;
+	width:200px;
+	height:100%;
+	background:#191970;
+	padding:30px 0;
+}
+.wrapper.silder ul li{
+	padding:30px;
+	border-bottom:1px solid rgba(0,0,0,0.05);
+	border-top:1px solid rgba(225,225,225,0.05);
+		
+}
+.wrapper.silder ul li a{
+	color:#bdd8d7;
+	display:block;
+	
+}	
+.wrapper.silder ul li a.glyphicon{
+	width:22px;
+}
+.wrapper.silder ul li:hover{
+	background:#594f8d;
+	
+}
+.wrapper.silder ul li:hover a{
+	color:#000;
+}
+.logo{
+	<img src="logo1.jpg"/>
+}
